@@ -1,0 +1,30 @@
+/* Language switcher ουδέτερος με περίγραμμα */
+
+.navbar .dropdown .btn {
+  background: transparent !important;
+  border: none !important;
+  color: #222 !important;
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+.navbar .dropdown .btn:hover,
+.navbar .dropdown.show .btn {
+  color: #ff8c22 !important; /* ίδιο πορτοκαλί με ΞΕΚΙΝΑ */
+}
+
+.navbar .dropdown-menu {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  min-width: 10rem;
+}
+
+/* Language switcher button  */
+.navbar .dropdown .btn {
+  position: relative;
+  padding-left: 2rem !important; /* αφήνει χώρο για το globe */
+}
+
+.navbar .dropdown .btn::before {
+  left: 10px !important; /* μετακινεί τη διαγώνια γραμμή λίγο πιο δεξιά */
+}
