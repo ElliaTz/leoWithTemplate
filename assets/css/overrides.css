@@ -1,30 +1,113 @@
-/* Language switcher ουδέτερος με περίγραμμα */
-
-.navbar .dropdown .btn {
-  background: transparent !important;
-  border: none !important;
-  color: #222 !important;
-  font-weight: 600;
-  padding: 6px 12px;
+/* ────────────────────────────────
+   NAV Right: START + Language
+   ──────────────────────────────── */
+:root {
+  --nav-pill-h: 44px; /* ίδιο ύψος και για τα δύο κουμπιά */
 }
 
+.navbar .nav-right-part-desktop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.navbar .nav-right-part-desktop .btn.btn-base,
+.navbar .dropdown .btn {
+  height: var(--nav-pill-h);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  border-radius: 12px;
+}
+
+/* START κουμπί */
+.navbar .nav-right-part-desktop .btn.btn-base {
+  padding: 0 16px; /* μόνο οριζόντιο padding */
+}
+
+/* Language κουμπί */
+.navbar .dropdown .btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* απόσταση globe – GR */
+  padding: 0 14px !important; /* οριζόντιο padding */
+  background: #fff !important;
+  border: 1px solid #e6e6e6 !important;
+  color: #151423 !important;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Καθαρισμός διακοσμητικών από theme */
+.nav-right-part::before,
+.nav-right-part::after,
+.nav-right-part-desktop::before,
+.nav-right-part-desktop::after,
+.navbar .dropdown .btn::before,
+.navbar .dropdown .btn::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hover / active */
 .navbar .dropdown .btn:hover,
 .navbar .dropdown.show .btn {
-  color: #ff8c22 !important; /* ίδιο πορτοκαλί με ΞΕΚΙΝΑ */
+  color: #ff8c22 !important;
+  border-color: #ffd3ad !important;
+  background: #fff7f0 !important;
 }
 
+/* caret διακριτικό */
+.navbar .dropdown-toggle::after {
+  margin-left: 6px;
+  vertical-align: middle;
+  border-top-width: 0.35em;
+  border-right-width: 0.35em;
+  border-left-width: 0.35em;
+}
+
+/* dropdown menu */
 .navbar .dropdown-menu {
   border-radius: 10px;
   border: 1px solid #ddd;
   min-width: 10rem;
 }
 
-/* Language switcher button  */
-.navbar .dropdown .btn {
-  position: relative;
-  padding-left: 2rem !important; /* αφήνει χώρο για το globe */
+/* ────────────────────────────────
+   Responsive
+   ──────────────────────────────── */
+@media (max-width: 991.98px) {
+  .navbar .nav-right-part-desktop {
+    gap: 10px;
+  }
+  .navbar .nav-right-part-desktop .btn.btn-base {
+    padding: 0 12px;
+    font-size: 13px;
+  }
+  .navbar .dropdown .btn {
+    height: 40px;
+    padding: 0 12px !important;
+    font-size: 13px;
+  }
 }
 
-.navbar .dropdown .btn::before {
-  left: 10px !important; /* μετακινεί τη διαγώνια γραμμή λίγο πιο δεξιά */
+@media (max-width: 575.98px) {
+  .navbar .logo img {
+    max-height: 28px;
+    height: auto;
+  }
+}
+
+/* ────────────────────────────────
+   Section Titles 
+   ──────────────────────────────── */
+.section-title {
+  padding-left: 0 !important;
 }
