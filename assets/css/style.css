@@ -9314,7 +9314,7 @@ ul {
 
 /* Κείμενο περιγραφής */
 .why-choose .section-title .content {
-  color: #d0d6e0; /* ανοιχτό γκρι-μπλε, πιο ήπιο από το λευκό */
+  color: #d0d6e0;
 }
 
 /* Bullets τίτλοι */
@@ -9339,8 +9339,7 @@ ul {
 /* Μετακίνηση τίτλου δεξιά (ίδια ευθεία με bullets) ΜΟΝΟ σε desktop */
 @media (min-width: 992px) {
   .why-choose .title-offset {
-    margin-left: 150px; /* π.χ. 60px (icon) + ~16px κενό */
-    /* αν θες λιγότερο/περισσότερο, άλλαξέ το */
+    margin-left: 150px;
   }
 }
 
@@ -9396,7 +9395,7 @@ ul {
 .single-accordion-inner .accordion-button:not(.collapsed)::after {
   filter: invert(64%) sepia(50%) saturate(458%) hue-rotate(330deg)
     brightness(103%) contrast(96%);
-  /* αυτό κάνει το caret πορτοκαλί */
+  /*  πορτοκαλί */
 }
 
 .faq-area.pd-top-100 {

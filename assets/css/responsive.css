@@ -151,11 +151,11 @@
   }
   .half-bg-right {
     /*display: none;*/
-    position: static; /* δεν είναι πια absolute */
-    width: 100%; /* πιάνει όλο το πλάτος */
-    height: auto; /* κρατάει αναλογίες */
-    margin-top: 30px; /* λίγο κενό από το κείμενο */
-    display: block; /* βεβαιώσου ότι φαίνεται */
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    display: block;
   }
   .navbar {
     padding: 0;
@@ -477,7 +477,7 @@
   }
 }
 
-/* ========== MOBILE (<=768) – CLEAN OVERRIDES ========== */
+/* ========== MOBILE (<=768)========== */
 @media (max-width: 767.98px) {
   /* Banner */
   .banner-area-1 {
@@ -528,7 +528,7 @@
   }
   .half-bg-right {
     margin-top: -30px;
-  } /* ανέβασμα εικόνας στο mobile */
+  }
 
   /* Testimonial (η ενότητα με το quote) */
   .testimonial-tight .single-testimonial-inner .details.w-100 {
@@ -548,17 +548,17 @@
 
   .counter-area.mg-top-90 {
     margin-top: 0 !important;
-  } /* ακύρωση αρνητικού lift */
+  }
   .counter-area-2.text-center {
     margin-bottom: 0 !important;
-  } /* ακύρωση -100px */
+  }
 
   /* FAQ */
   .faq-area.pd-top-60.pd-bottom-60 {
     padding-top: 30px !important;
     padding-bottom: 30px !important;
   }
-  /* Αν θες οι διακοσμητικές εικόνες να μην “ανεβαίνουν” στο mobile */
+
   .faq-area .faq-image-wrap .img-position-1,
   .faq-area .faq-image-wrap .img-position-2 {
     position: static !important;
@@ -568,13 +568,12 @@
     margin: 0 auto;
     z-index: 0 !important;
   }
-  /* ή/και κρύψε τη δεύτερη αν προτιμάς */
+
   .faq-area .img-position-2 {
     display: none !important;
   }
 }
 
-/* Global (εκτός media query) */
 .testimonial-tight .thumb {
   padding: 0 !important;
   margin: 0 !important;
@@ -587,7 +586,7 @@
 
 /* ========== DESKTOP RESTORE (>=992px) ========== */
 @media (min-width: 992px) {
-  /* FAQ paddings όπως τα θέλεις στο desktop */
+  /* FAQ paddings στο desktop */
   .faq-area.pd-top-60.pd-bottom-60 {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -601,9 +600,9 @@
   .faq-area .faq-image-wrap .img-position-2 {
     position: absolute;
     left: auto;
-    top: auto; /* θα ορίσουμε κάτω τη 2 */
+    top: auto;
     z-index: 0;
-    display: block; /* ξανά ορατές στο desktop */
+    display: block;
   }
   .faq-area .img-position-2 {
     left: 115px;
@@ -617,12 +616,11 @@
   }
   .counter-area.mg-top-90 {
     margin-top: -90px;
-  } /* αν θες το overlap */
+  }
   .counter-area-2.text-center {
     margin-bottom: -100px;
-  } /* όπως στο template */
+  }
 
-  /* Η εικόνα του goal να μην έχει αρνητικό margin στο desktop */
   .half-bg-right {
     margin-top: 0;
   }
@@ -633,12 +631,10 @@
 
 /* ========== TABLET (768–991.98px) ========== */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  /* Κράτα “καθαρό” το spacing */
   .testimonial-area {
     padding-bottom: 60px !important;
   }
 
-  /* Ακύρωσε τα overlaps των counters στο tablet */
   .counter-area.mg-top-90 {
     margin-top: 0 !important;
   }
@@ -646,11 +642,11 @@
     margin-bottom: 0 !important;
   }
 
-  /* FAQ: πιο μικρό padding και ασφαλές layout */
+  /* FAQ: πιο μικρό padding  */
   .faq-area.pd-top-60.pd-bottom-60 {
     padding-top: 40px !important;
     padding-bottom: 40px !important;
-    overflow: hidden; /* μην αφήνεις να κρέμεται τίποτα */
+    overflow: hidden;
   }
 
   .pricing-area .single-pricing-inner {
