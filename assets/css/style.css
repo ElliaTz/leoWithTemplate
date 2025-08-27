@@ -9115,6 +9115,43 @@ ul {
 
 /*******Changes********/
 /* αλλαγες στο template*/
+/* ────────────────────────────────
+/*  Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-icon {
+  height: 50px;
+  width: auto;
+}
+
+.logo-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 2px;
+  margin-left: 40px;
+  line-height: 1.1;
+}
+
+/* Σε tablet μικραίνει το offset */
+@media (max-width: 768px) {
+  .logo-subtitle {
+    margin-left: 25px;
+    font-size: 13px;
+  }
+}
+
+/* Σε κινητά */
+@media (max-width: 480px) {
+  .logo-subtitle {
+    display: none;
+  }
+}
+/*τελος logo*/
 
 /*αρχή hero section*/
 .leo-experience {

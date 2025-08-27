@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
@@ -23,12 +23,13 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/overrides.css?v=1" />
 
-  <!-- Google font -->
+  <!-- Google font (fixed) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=greek"
     rel="stylesheet" />
 
- 
-  <link rel="stylesheet" href="assets/css/overrides.css" />
+  <!-- fonts που υποστηρίζουν αραβικά -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="sc5">
@@ -54,7 +55,7 @@
         </button>
       </div>
       <!--logo-->
-  <div class="logo">
+       <div class="logo">
   <a href="index.html" class="logo-link">
     <!-- Εικόνα με το εικονίδιο + LEO -->
     <img src="assets/img/logoLeo.png" alt="LEO logo" class="logo-icon" />
@@ -63,50 +64,45 @@
   </a>
 </div>
 
-
       <div class="collapse navbar-collapse" id="Iitechie_main_menu">
         <ul class="navbar-nav menu-open text-lg-end">
           <li>
-            <a href="#home">Αρχική</a>
+            <a href="#home">الرئيسية</a>
           </li>
           <li>
-            <a href="#about">Τι είναι</a>
+            <a href="#about">حول</a>
           </li>
           <li>
-            <a href="#values">Αξίες</a>
+            <a href="#values">القيم</a>
           </li>
           <li>
-            <a href="#goal">Στόχος</a>
+            <a href="#goal">الهدف</a>
           </li>
-          <li><a href="#contact">Επικοινωνία</a></li>
+          <li><a href="#contact">اتصل</a></li>
         </ul>
       </div>
-   <div class="nav-right-part nav-right-part-desktop align-self-center d-flex align-items-center">
-  <!-- Κουμπί ΞΕΚΙΝΑ -->
-  <a class="btn btn-base"
-   href="mailto:info@conferience.com?subject=Ενδιαφέρον%20για%20LEO&body=Γεια%20σας%2C%0D%0A%0D%0AΘα%20ήθελα%20να%20μάθω%20περισσότερα%20για%20το%20LEO.%0D%0A%0D%0AΌνομα%3A%20%0D%0AΕταιρεία%3A%20%0D%0AΤηλέφωνο%3A%20%0D%0A%0D%0AΕυχαριστώ%21">
-  ΞΕΚΙΝΑ
-</a>
+      <div class="nav-right-part nav-right-part-desktop align-self-center d-flex align-items-center">
+        <!-- Κουμπί ΞΕΚΙΝΑ -->
+        <a class="btn btn-base"
+          href="mailto:info@conferience.com?subject=Interested%20in%20LEO&body=Hello%20Conferience%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20learn%20more%20about%20LEO.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0APhone%3A%20%0D%0A%0D%0AThanks%21">
+          ابدأ
+        </a>
 
-  <!-- Language Dropdown -->
-  <div class="dropdown">
-    <button class="btn btn-outline dropdown-toggle d-flex align-items-center"
-            type="button"
-            id="langDropdown"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            aria-label="Αλλαγή γλώσσας">
-      <i class="fa fa-globe me-2" aria-hidden="true"></i>
-      <span class="current-lang">GR</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-      <!-- Προσαρμόζεις τα href ανά δομή site -->
-      <li><a class="dropdown-item" href="index.html">Ελληνικά (GR)</a></li>
-      <li><a class="dropdown-item" href="index-en.html">English (EN)</a></li>
-     <li><a class="dropdown-item" href="index-ar.html">العربية (AR)</a></li>
-    </ul>
-  </div>
-</div>
+        <!-- Language Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-outline dropdown-toggle d-flex align-items-center" type="button" id="langDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Αλλαγή γλώσσας">
+            <i class="fa fa-globe me-2" aria-hidden="true"></i>
+            <span class="current-lang">AR</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+            <!-- Προσαρμόζεις τα href ανά δομή site -->
+            <li><a class="dropdown-item" href="index.html">Ελληνικά (GR)</a></li>
+            <li><a class="dropdown-item" href="index-en.html">English (EN)</a></li>
+            <li><a class="dropdown-item" href="index-ar.html">العربية (AR)</a></li>
+          </ul>
+        </div>
+      </div>
 
 
     </div>
@@ -130,14 +126,13 @@
         <div class="col-lg-6 col-md-9 order-lg-first align-self-center">
           <div class="banner-inner style-white text-center text-lg-start">
             <h2 class="title">
-              Το 1ο Social Learnig εργαλείο, βασισμένο σε πραγματικές
-              εμπειρίες
+              أول أداة للتعلم الاجتماعي، مبنية على تجارب حقيقية
             </h2>
             <p class="content">
-              Το LEO app μετατρέπει την εμπειρία των εργαζομένων σε στρατηγική
-              αξία, ενισχύοντας τη σύνδεση και την επικοινωνία στον οργανισμό.
+              يحوّل تطبيق <span dir="ltr">LEO</span> خبرات الموظفين إلى قيمة استراتيجية، ويعزز التواصل والترابط داخل
+              المنظمة.
             </p>
-            <p class="leo-experience">Ζήσε την Εμπειρία LEO</p>
+            <p class="leo-experience"> عش تجربة <span dir="ltr">LEO</span></p>
           </div>
         </div>
       </div>
@@ -145,44 +140,45 @@
   </div>
   <!-- banner area end -->
 
-  <!-- γνώρισε το LEO area start -->
+
+  <!-- Meet LEO area start -->
   <div id="about" class="about-area pd-top-60 pd-bottom-60">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-8">
           <div class="thumb">
             <img src="assets/img/MeetLeoApp/whatIsIt.png" alt="img" style="
-                  max-width: 75%;
-                  height: auto;
-                  display: block;
-                  margin: 0 auto;
-                " />
+                max-width: 75%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+              " />
           </div>
         </div>
         <div class="col-lg-6">
           <div class="section-title px-lg-5 mb-0">
-            <h5 class="sub-title">Γνώρισε το LEO app</h5>
+            <h5 class="sub-title">تعرّف على تطبيق LEO</h5>
             <h2 class="title">
-              Όταν οι άνθρωποι μιλούν, η εταιρία εξελίσσεται.
+              عندما يتكلم الناس، تنمو الشركة.
             </h2>
             <p class="content">
-              Στο LEO app, κάθε εμπειρία μετράει. Η συλλογική εμπειρία των
-              εργαζομένων γίνεται στρατηγική γνώση, ενισχύοντας τη συνοχή και
-              τη διασύνδεση σε όλα τα επίπεδα της εταιρείας.
+              في تطبيق LEO، كل تجربة مهمة. تتحول المعرفة الجماعية للموظفين إلى رؤية استراتيجية، مما يعزز التماسك
+              والتواصل في جميع مستويات الشركة.
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Γνωρισε το LEO area end -->
+  <!-- Meet LEO area end -->
 
-  <!-- how it work area start -->
+
+  <!-- how it works area start -->
   <div class="how-it-work-area bg-blue pd-top-60 pd-bottom-60">
     <div class="container">
       <div class="row justify-content-center mb-4">
         <div class="col-lg-10 text-center">
-          <h3 class="section-head">To LEO app στην πράξη</h3>
+          <h3 class="section-head">تطبيق LEO قيد العمل</h3>
         </div>
       </div>
       <div class="row">
@@ -195,7 +191,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h4>Μοιράσου την ιστορία σου</h4>
+                <h4>شارك قصتك</h4>
               </div>
             </div>
           </div>
@@ -209,7 +205,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h4>Ευκαιρία για βελτιστοποίηση</h4>
+                <h4>فرصة للتحسين</h4>
               </div>
             </div>
           </div>
@@ -223,7 +219,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h4>Προσθήκη ιστορίας στο onboarding</h4>
+                <h4>أضف القصة إلى برنامج الإعداد <span dir="ltr">(onboarding)</span></h4>
               </div>
             </div>
           </div>
@@ -237,7 +233,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h4>Σύνδεση εμπειριών με στόχους βιωσιμότητας</h4>
+                <h4>اربط التجارب بأهداف الاستدامة</h4>
               </div>
             </div>
           </div>
@@ -245,13 +241,14 @@
       </div>
     </div>
   </div>
-  <!-- how it work area end -->
+  <!-- how it works area end -->
 
-  <!-- pricing area start/Μια ματιά μέσα στο LEO app -->
+
+  <!-- pricing area start / A look inside the LEO app -->
   <div class="pricing-area pd-top-60 pd-bottom-60">
     <div class="container">
       <div class="mb-4">
-        <h3 class="mb-0">Μια ματιά μέσα στο LEO app</h3>
+        <h3 class="mb-0">نظرة داخل تطبيق <span dir="ltr">LEO</span></h3>
       </div>
       <!-- details -->
       <div class="row justify-content-center">
@@ -259,13 +256,12 @@
           <div class="single-pricing-inner style-1">
             <div class="details">
               <h5>
-                Αυθεντική,<br />
-                άμεση αφήγηση.
+                رواية قصص أصيلة<br />
+                وفورية
               </h5>
-              <img src="assets/img/MeetLeoApp/card1.png" alt="Μια ματιά 3" />
+              <img src="assets/img/MeetLeoApp/card1.png" alt="A look 1" />
               <p>
-                Ο εργαζόμενος καταγράφει εμπειρία, συμβουλή ή περιστατικό
-                απευθείας στην εφαρμογή.
+                يسجل الموظفون تجارب أو نصائح أو حوادث مباشرة في التطبيق.
               </p>
             </div>
           </div>
@@ -273,11 +269,11 @@
         <div class="col-lg-4 col-md-6">
           <div class="single-pricing-inner style-1">
             <div class="details">
-              <h5>Όλοι συμμετέχουν. <br />Όλοι έχουν λόγο.</h5>
-              <img src="assets/img/MeetLeoApp/card2.png" alt="Μια ματιά 3" />
+              <h5> الجميع يشارك.<br />
+                الجميع له صوت.</h5>
+              <img src="assets/img/MeetLeoApp/card2.png" alt="A look 2" />
               <p>
-                Η εμπειρία ανοίγει διάλογο, με σχόλια, αντιδράσεις και
-                διασύνδεση μεταξύ ρόλων.
+                	كل تجربة تثير الحوار، مع التعليقات، ردود الفعل، والروابط بين الأدوار.
               </p>
             </div>
           </div>
@@ -286,13 +282,11 @@
           <div class="single-pricing-inner style-1">
             <div class="details">
               <h5>
-                Ενισχυμένο με<br />
-                AI.
+                 معزز بالذكاء الاصطناعي <br /><span dir="ltr">(AI)</span>.
               </h5>
-              <img src="assets/img/MeetLeoApp/card3.png" alt="Μια ματιά 3" />
+              <img src="assets/img/MeetLeoApp/card3.png" alt="A look 3" />
               <p>
-                Η εφαρμογή συνοψίζει insights, αναδεικνύει σημεία, και
-                προτείνει δράσεις με βάση το περιεχόμενο.
+               يلخص التطبيق الرؤى، ويسلط الضوء على النقاط الرئيسية، ويقترح إجراءات بناءً على المحتوى.
               </p>
             </div>
           </div>
@@ -300,86 +294,86 @@
       </div>
     </div>
   </div>
-  <!-- pricing area end/Μια ματιά μέσα στο LEO app -->
+  <!-- pricing area end / A look inside the LEO app -->
 
-  <!-- service area start/Αξία για κάθε ρόλο -->
+
+  <!-- service area start / Value for every role -->
   <div id="values" class="service-area pd-top-60 pd-bottom-60" style="
-        background: #0b1d36 url('./assets/img/bg/leoBgLeftRight.png')
-          center/cover no-repeat;
-      ">
+      background: #0b1d36 url('./assets/img/bg/leoBgLeftRight.png')
+        center/cover no-repeat;
+    ">
     <div class="container">
-      <!-- Τίτλος + υπότιτλος -->
+      <!-- Title + subtitle -->
       <div class="row justify-content-center mb-4">
         <div class="col-lg-10 text-center">
-          <h3 class="section-head">Αξία για κάθε ρόλο</h3>
+          <h3 class="section-head">Value for every role</h3>
           <p class="section-sub">
-            Ένα οικοσύστημα συμμετοχής, όπου κάθε ρόλος αποκτά φωνή και
-            επίδραση.
+            An ecosystem of participation, where every role gains a voice and impact.
           </p>
         </div>
       </div>
 
       <!-- 2x2 grid -->
       <div class="row g-4 align-items-stretch">
-        <!-- Κάρτα 1 -->
+        <!-- Card 1 -->
         <div class="col-md-6 col-lg-6 d-flex">
           <div class="single-service-inner style-white flex-fill">
             <div class="icon-box">
-              <img src="assets/img/icons_leo/megaphone.png" alt="Εικονίδιο μεγαφώνου" />
+              <img src="assets/img/icons_leo/megaphone.png" alt="Megaphone icon" />
             </div>
             <div class="details">
-              <h3>Ανάδειξη εμπειρίας</h3>
+              <h3>Showcasing experience</h3>
               <p>
-                Η καθημερινή εμπειρία αποκτά φωνή και μετατρέπεται σε γνώση
-                που εμπνέει και συνδέει.
+                Everyday experiences gain a voice and are transformed into knowledge
+                that inspires and connects.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Κάρτα 2 -->
+        <!-- Card 2 -->
         <div class="col-md-6 col-lg-6 d-flex">
           <div class="single-service-inner style-white flex-fill">
             <div class="icon-box">
-              <img src="assets/img/icons_leo/plant.png" alt="Εικονίδιο φυτού" />
+              <img src="assets/img/icons_leo/plant.png" alt="Plant icon" />
             </div>
             <div class="details">
-              <h3>Υλικό κουλτούρας</h3>
+              <h3>Cultural material</h3>
               <p>
-                Αυθεντικό υλικό για ένταξη, εκπαίδευση και διατήρηση ανθρώπων,
-                χωρίς έξτρα κόστος.
+                Authentic material for onboarding, training, and retention,
+                without additional cost.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Κάρτα 3 -->
+        <!-- Card 3 -->
         <div class="col-md-6 col-lg-6 d-flex">
           <div class="single-service-inner style-white flex-fill">
             <div class="icon-box">
-              <img src="assets/img/icons_leo/decision.png" alt="Εικονίδιο απόφασης" />
+              <img src="assets/img/icons_leo/decision.png" alt="Decision icon" />
             </div>
             <div class="details">
-              <h3>Άμεση εμπειρία από την πράξη</h3>
+              <h3>Direct experience from the field</h3>
               <p>
-                Πραγματική εικόνα καθημερινότητας. Η εμπειρία από την πρώτη
-                γραμμή γίνεται εργαλείο απόφασης.
+                A real picture of daily life. Frontline experience becomes
+                a decision-making tool.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Κάρτα 4 -->
+        <!-- Card 4 -->
         <div class="col-md-6 col-lg-6 d-flex">
           <div class="single-service-inner style-white flex-fill">
             <div class="icon-box">
-              <img src="assets/img/icons_leo/authenticator.png" alt="Εικονίδιο αυθεντικότητα" />
+              <img src="assets/img/icons_leo/authenticator.png" alt="Authenticity icon" />
             </div>
             <div class="details">
-              <h3>Αυθεντικό περιεχόμενο</h3>
+              <h3>Authentic content</h3>
               <p>
-                Το storytelling φέρνει αυθεντικότητα, εμπιστοσύνη και ιστορίες
-                με κοινωνικό και περιβαλλοντικό αντίκτυπο.
+                Storytelling brings authenticity, trust, and stories
+                with social and environmental impact.
               </p>
             </div>
           </div>
@@ -387,20 +381,21 @@
       </div>
     </div>
   </div>
-  <!-- service area end/Αξία για κάθε ρόλο -->
+  <!-- service area end / Value for every role -->
 
-  <!-- skill area start/ στοχος-->
+
+  <!-- skill area start / goal -->
   <div id="goal" class="skill-area bg-relative pd-top-60 pd-bottom-60">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pe-5 mb-5 mb-lg-0">
           <div class="section-title mb-0">
-            <h5 class="sub-title">Στοχος</h5>
-            <h2 class="title">Πλάνο 6 Εβδομάδων</h2>
+            <h5 class="sub-title">Goal</h5>
+            <h2 class="title">6 Week Plan</h2>
           </div>
           <div class="skill-progress-area mt-4">
             <div class="single-progressbar">
-              <h6>Συμμετοχή Εγγεγραμένων</h6>
+              <h6>Participation of Registered Users</h6>
               <div class="progress-item" id="progress-running">
                 <div class="progress-bg">
                   <div id="progress" class="progress-rate" data-value="50"></div>
@@ -412,7 +407,7 @@
               </div>
             </div>
             <div class="single-progressbar">
-              <h6>Ταχύτερη Ένταξη Εργαζομένων</h6>
+              <h6>Faster Employee Onboarding</h6>
               <div class="progress-item" id="progress-running-1">
                 <div class="progress-bg">
                   <div id="progress-1" class="progress-rate" data-value="25"></div>
@@ -424,7 +419,7 @@
               </div>
             </div>
             <div class="single-progressbar">
-              <h6>Διαμοιρασμένες Ιστορίες</h6>
+              <h6>Shared Stories</h6>
               <div class="progress-item" id="progress-running-2">
                 <div class="progress-bg">
                   <div id="progress-2" class="progress-rate" data-value="25"></div>
@@ -441,108 +436,15 @@
       </div>
     </div>
 
-    <!-- εικόνα -->
-    <img class="half-bg-right" src="assets/img/goal/close-up-people-working.png" alt="img" />
+    <!-- image -->
+    <img class="half-bg-right" src="assets/img/goal/close-up-people-working.png" alt="People working close-up" />
   </div>
   <!-- skill area end -->
 
-  <!-- why choose area start -->
-  <div class="why-choose pd-top-60 pd-bottom-60">
-    <!-- Επάνω row χωρίς container -->
-    <div class="row g-0 align-items-center mb-5">
-      <!-- Αριστερά: τίτλος -->
-      <div class="col-lg-6 ps-3 pe-3 ps-lg-5">
-        <div class="section-title mb-0">
-          <div class="title-offset">
-            <h5 class="sub-title">Γιατί τώρα;</h5>
-            <h2 class="title">Ο κόσμος της εργασίας αλλάζει ριζικά</h2>
-            <p class="content">
-              Οι άνθρωποι δεν ζητούν απλώς εργασία, ζητούν φωνή, σύνδεση και
-              νόημα.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Δεξιά: εικόνα full width -->
-      <div class="col-lg-6">
-        <img src="assets/img/WhyNow/WhyNow.png" alt="Εικόνα" class="img-cover" />
-      </div>
-    </div>
 
-    <!-- Bullets κανονικά μέσα σε container -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-6">
-          <div class="media single-choose-inner mb-4">
-            <div class="media-left">
-              <div class="icon">
-                <img src="assets/img/icons_leo/transformation.png" alt="Μετασχηματισμός" />
-              </div>
-            </div>
-            <div class="media-body">
-              <h4>Μετασχηματισμός Εργασίας</h4>
-              <p>
-                Gen Z, τηλεργασία & αποστασιοποίηση αλλάζουν το εργασιακό
-                τοπίο.
-              </p>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-md-6 col-lg-6">
-          <div class="media single-choose-inner mb-4">
-            <div class="media-left">
-              <div class="icon">
-                <img src="assets/img/icons_leo/mute.png" alt="Χαμηλή συμμετοχή" />
-              </div>
-            </div>
-            <div class="media-body">
-              <h4>Χαμηλή Συμμετοχή</h4>
-              <p>Αυξάνει τα κόστη & μειώνει την παραγωγικότητα.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-6">
-          <div class="media single-choose-inner mb-4">
-            <div class="media-left">
-              <div class="icon">
-                <img src="assets/img/icons_leo/meaning.png" alt="Νόημα" />
-              </div>
-            </div>
-            <div class="media-body">
-              <h4>Αναζήτηση Νοήματος</h4>
-              <p>
-                Οι άνθρωποι δεν θέλουν μόνο μισθό, αλλά και φωνή, συμμετοχή,
-                όραμα.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-6">
-          <div class="media single-choose-inner mb-4">
-            <div class="media-left">
-              <div class="icon">
-                <img src="assets/img/icons_leo/loss_of_performance.png" alt="Απώλεια Απόδοσης" />
-              </div>
-            </div>
-            <div class="media-body">
-              <h4>Απώλεια Απόδοσης</h4>
-              <p>
-                Χωρίς κουλτούρα φωνής, οι ομάδες γίνονται λιγότερο ευέλικτες &
-                αποτελεσματικές.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- why choose area end -->
-
-  <!--  πρώην testimonial area/Στατιστικα start -->
+  <!-- former testimonial area / Statistics start -->
   <div class="testimonial-area pd-top-60 bg-cover" style="background: linear-gradient(135deg, #5c2700, #ff8c42)">
     <div class="container">
       <div class="row justify-content-center">
@@ -550,12 +452,11 @@
           <div class="single-testimonial-inner style-three text-center">
             <div class="details">
               <p>
-                Η όμάδα μας είναι αυτή που δημιούργησε το Conferience, μια
-                επαναστατική πλατφορμα εγγραφών και διάδρασης σε εκδηλώσεις
-                μικρού και μεγάλου μεγέθους. Διαθέτει βαθιά γνώση στη δυναμική
-                των ομάδων, με εμπειρία σε εργαλεία συμμετοχής που ενισχύουν
-                τη σύνδεση, τη συνεργασία και την εξέλιξη των ανθρώπων στον
-                οργανισμό.
+                Our team is the one that created Conferience, a revolutionary
+                platform for registrations and interaction in events of all sizes.
+                We have deep knowledge of team dynamics and experience in
+                engagement tools that enhance connection, collaboration,
+                and the growth of people within organizations.
               </p>
             </div>
           </div>
@@ -567,24 +468,24 @@
     <div class="counter-area">
       <div class="container">
         <div class="counter-area-2 text-center">
-          <h3 class="section-title section-title--underline">Στατιστικά</h3>
+          <h3 class="section-title section-title--underline">Statistics</h3>
           <div class="row">
             <div class="col-md-4">
               <div class="single-exp-inner style-4 text-center">
                 <h2><span class="counter">12</span> <span>+</span></h2>
-                <h5>Χρόνια Εμπειρίας</h5>
+                <h5>Years of Experience</h5>
               </div>
             </div>
             <div class="col-md-4">
               <div class="single-exp-inner style-4 text-center">
-                <h2><span class="counter">50.000</span> <span>+</span></h2>
-                <h5>Συμμετέχοντες</h5>
+                <h2><span class="counter">50,000</span> <span>+</span></h2>
+                <h5>Participants</h5>
               </div>
             </div>
             <div class="col-md-4">
               <div class="single-exp-inner style-4 text-center">
-                <h2><span class="counter">12.000</span> <span>+</span></h2>
-                <h5>Events κάθε κλίμακας</h5>
+                <h2><span class="counter">12,000</span> <span>+</span></h2>
+                <h5>Events of all scales</h5>
               </div>
             </div>
           </div>
@@ -593,7 +494,8 @@
     </div>
     <!-- counter area end -->
   </div>
-  <!--  πρώην testimonial area/ στατιστικά end -->
+  <!-- former testimonial area / Statistics end -->
+
 
   <!-- faq area start -->
   <div class="faq-area pd-top-60 pd-bottom-60">
@@ -602,33 +504,30 @@
         <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0">
           <div class="faq-image-wrap">
             <div class="thumb">
-              <img src="assets/img/about/3.webp" alt="img" />
-
-              <img class="img-position-2 top_image_bounce" src="assets/img/about/f3.webp" alt="img" />
+              <img src="assets/img/about/3.webp" alt="FAQ illustration" />
+              <img class="img-position-2 top_image_bounce" src="assets/img/about/f3.webp" alt="FAQ decoration" />
             </div>
           </div>
         </div>
         <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
           <div class="section-title mb-0">
-            <h5 class="sub-title">Faq</h5>
-            <h2 class="title">Συχνές Ερωτήσεις</h2>
+            <h5 class="sub-title">FAQ</h5>
+            <h2 class="title">Frequently Asked Questions</h2>
           </div>
           <div class="accordion mt-4" id="accordionExample">
             <div class="accordion-item single-accordion-inner">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                   aria-expanded="true" aria-controls="collapseOne">
-                  Τι είναι το Leo;
+                  What is LEO?
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Το LEO είναι μια εφαρμογή που ενισχύει τη φωνή των
-                  εργαζομένων μέσα στον οργανισμό. Δίνει χώρο για έκφραση,
-                  συμμετοχή, σύνδεση και ουσιαστική συμβολή στην κουλτούρα της
-                  εταιρείας. Δεν είναι εργαλείο επικοινωνίας — είναι εργαλείο
-                  νοήματος.
+                  LEO is an application that amplifies employees’ voices within the organization.
+                  It provides space for expression, participation, connection, and meaningful contribution
+                  to the company culture. It’s not just a communication tool — it’s a tool for meaning.
                 </div>
               </div>
             </div>
@@ -636,17 +535,15 @@
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Σε ποιους απευθύνεται;
+                  Who is it for?
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Το LEO απευθύνεται σε οργανισμούς που θέλουν να ενδυναμώσουν
-                  τους ανθρώπους τους, να ενισχύσουν την εσωτερική συνοχή και
-                  να δημιουργήσουν μια κουλτούρα που ακούει. Είναι κατάλληλο
-                  για κάθε κλάδο και μέγεθος εταιρείας, από startups μέχρι
-                  μεγάλους οργανισμούς.
+                  LEO is designed for organizations that want to empower their people, strengthen internal cohesion,
+                  and build a culture that listens. It is suitable for every industry and company size —
+                  from startups to large enterprises.
                 </div>
               </div>
             </div>
@@ -654,20 +551,17 @@
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Ποια είναι η διαφορά με εφαρμογές όπως WhatsApp, Viber,
-                  Messenger, Slack ή Teams;
+                  How is it different from apps like WhatsApp, Viber, Messenger, Slack, or Teams?
                 </button>
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Το LEO δεν είναι εργαλείο συνομιλίας ή συνεργασίας. Οι
-                  παραπάνω εφαρμογές εξυπηρετούν την άμεση επικοινωνία και την
-                  οργάνωση εργασιών. Το LEO δημιουργεί χώρο για αφηγηματική
-                  συμμετοχή, έκφραση εμπειριών, ενίσχυση κουλτούρας και
-                  συλλογή αυθεντικού περιεχομένου. Είναι σχεδιασμένο για να
-                  λειτουργεί δίπλα στην καθημερινότητα, χωρίς να την
-                  αποδιοργανώνει.
+                  LEO is not a chat or collaboration tool.
+                  The above apps serve instant communication and task organization.
+                  LEO creates space for narrative participation, experience sharing, culture building,
+                  and authentic content collection.
+                  It is designed to work alongside daily workflows without disrupting them.
                 </div>
               </div>
             </div>
@@ -678,35 +572,36 @@
   </div>
   <!-- faq area end -->
 
+
   <!-- testimonial-slider start -->
   <div class="bg-relative testimonial-tight">
     <div class="slider testimonial-thumb testimonial-thumb-2">
       <div class="item">
         <div class="row g-0 align-items-stretch testimonial-tight">
-          <!-- Αριστερή στήλη με εικόνα -->
+          <!-- Left column with image -->
           <div class="col-lg-5 col-md-6 d-flex">
             <div class="thumb flex-fill" style="
-                  background-image: url('./assets/img/testimonial/image_testimonial.webp');
-                ">
+                background-image: url('./assets/img/testimonial/image_testimonial.webp');
+              ">
               <div class="quote-wrap">
                 <div class="quote">
-                  <img src="assets/img/testimonial/02.webp" alt="img" />
+                  <img src="assets/img/testimonial/02.webp" alt="quote icon" />
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Δεξιά στήλη με κείμενο -->
+          <!-- Right column with text -->
           <div class="col-xl-5 col-md-6 d-flex">
             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4 w-100 d-flex align-items-center">
               <div class="details w-100">
                 <h2>
-                  Η φωνή των εργαζομένων δεν είναι nice-to-have. Είναι
+                  Employees’ voices are not a nice-to-have. They are a
                   business asset.
                 </h2>
                 <p>
-                  Το LEO app είναι η απόδειξη ότι όταν οι άνθρωποι έχουν χώρο,
-                  δημιουργούν αξία, και η αξία αυτή είναι μετρήσιμη.
+                  The LEO app proves that when people have space,
+                  they create value — and that value is measurable.
                 </p>
               </div>
             </div>
@@ -725,31 +620,32 @@
         <div class="col-lg-10 col-md-12">
           <div class="single-call-to-action-inner style-white">
             <h2 style="color: #0b2a64">
-              Θέλεις μικρά μυστικά που κάνουν τη διαφορά;
+              Want small secrets that make a big difference?
             </h2>
-            <a class="btn btn-black mt-3" href="tips.html">Δες Tips & Tricks</a>
+            <a class="btn btn-black mt-3" href="tips-en.html">See Tips & Tricks</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- call to action start end-->
+  <!-- call to action end -->
+
   <!-- Contact area start -->
   <div id="contact" class="team-area info-box-two pd-top-60 pd-bottom-60 contact-dark">
     <div class="container">
-      <!-- Τίτλος -->
+      <!-- Title -->
       <div class="row justify-content-center mb-5">
         <div class="col-lg-6 col-md-9 p-0">
           <div class="section-title text-center">
-            <h5 class="sub-title">Επικοινωνία</h5>
-            <h2 class="title">Έλα σε επαφή μαζί μας</h2>
+            <h5 class="sub-title">Contact</h5>
+            <h2 class="title">Get in Touch with Us</h2>
           </div>
         </div>
       </div>
 
-      <!-- Κάρτες επικοινωνίας -->
+      <!-- Contact cards -->
       <div class="row justify-content-center gy-4">
-        <!-- Διεύθυνση -->
+        <!-- Address -->
         <div class="col-lg-4 col-md-6 d-flex">
           <div class="single-contact-inner text-center flex-fill">
             <div class="icon-box">
@@ -757,7 +653,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h3>Διεύθυνση</h3>
+                <h3>Address</h3>
                 <p>
                   12 Bishop Street, Leicester,<br />
                   LE1 6AF United Kingdom
@@ -782,7 +678,7 @@
           </div>
         </div>
 
-        <!-- Τηλέφωνο -->
+        <!-- Phone -->
         <div class="col-lg-4 col-md-6 d-flex">
           <div class="single-contact-inner text-center flex-fill">
             <div class="icon-box">
@@ -790,7 +686,7 @@
             </div>
             <div class="details-wrap">
               <div class="details-inner">
-                <h3>Τηλέφωνο</h3>
+                <h3>Phone</h3>
                 <p>+30 695.1979547</p>
               </div>
             </div>
@@ -798,22 +694,24 @@
         </div>
       </div>
 
+      <!-- Call to action inside Contact -->
       <div class="row justify-content-center mb-5">
         <div class="col-lg-6 col-md-9">
           <div class="section-title text-center">
             <h2 class="title cta-title text-center">
-              Έτοιμος να δώσεις φωνή στην ομάδα σου;
+              Ready to give your team a voice?
             </h2>
           </div>
         </div>
       </div>
 
+      <!-- Contact form -->
       <form class="contact-form-wrap" action="mail.php" method="post" id="contact-form">
         <div class="consulting-contact-form contact-form-card">
-          <h3 class="mb-3">Έχεις ερωτήσεις;</h3>
+          <h3 class="mb-3">Have any questions?</h3>
 
           <div class="btn-wrap pb-2">
-            <button type="submit" class="btn btn-base">Στείλε μήνυμα</button>
+            <button type="submit" class="btn btn-base">Send Message</button>
           </div>
           <p class="form-messege mb-0 mt-20 text-center"></p>
         </div>
@@ -822,16 +720,18 @@
   </div>
   <!-- Contact area end -->
 
+
   <!-- footer area start -->
   <footer class="footer-area bg-black bg-cover" style="background-image: url('./assets/img/bg/2.webp')">
     <div class="container">
       <div class="row">
+        <!-- About -->
         <div class="col-lg-3 col-md-6">
           <div class="widget widget_about">
-            <h4 class="widget-title">Σχετικά με την Εταιρεία</h4>
+            <h4 class="widget-title">About the Company</h4>
             <div class="details">
-              <p>To Leo αποτελεί μέρος της Conferience Ltd.</p>
-              <p>Διεύθυνση</p>
+              <p>Leo is part of Conferience Ltd.</p>
+              <p>Address</p>
               <p>
                 12 Bishop Street, Leicester,<br />
                 LE1 6AF United Kingdom
@@ -857,12 +757,13 @@
           </div>
         </div>
 
+        <!-- Contact -->
         <div class="col-lg-3 col-md-6">
           <div class="widget widget_nav_menu">
-            <h4 class="widget-title">Επικοινωνία</h4>
+            <h4 class="widget-title">Contact</h4>
             <ul>
               <li><a href="#contact">+30 695.1979547</a></li>
-              <li><a href="#contact">info@conferience.com </a></li>
+              <li><a href="#contact">info@conferience.com</a></li>
               <li>
                 <a href="#contact">12 Bishop Street, Leicester, LE1 6AF United Kingdom</a>
               </li>
@@ -870,35 +771,33 @@
           </div>
         </div>
 
+        <!-- Links -->
         <div class="col-lg-3 col-md-6">
           <div class="widget widget_nav_menu">
-            <h4 class="widget-title">Σύνδεσμοι</h4>
+            <h4 class="widget-title">Links</h4>
             <ul>
-              <li><a href="#home">Αρχική</a></li>
-              <li><a href="#about">Τι είναι </a></li>
-              <li><a href="#values">Αξίες</a></li>
-              <li><a href="#goal">Στόχος</a></li>
-              <li><a href="#contact">Επικοινωνία</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#values">Values</a></li>
+              <li><a href="#goal">Goal</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>
 
+        <!-- Subscribe -->
         <div class="col-lg-3 col-md-6">
           <div class="widget widget_subscribe">
             <h4 class="widget-title">
-              Θέλετε να λαμβάνετε ενημερώσεις από μας;
+              Want to receive updates from us?
             </h4>
             <div class="single-input-inner style-border style-bg-none">
               <input type="text" placeholder=" Email" />
               <button><i class="fa fa-arrow-right"></i></button>
             </div>
-            <!-- <label
-                ><input type="checkbox" />Maecenas tempususcondime honcus sem
-                quam libero</label
-              > -->
             <ul>
-              <li><a href="terms.html">Όροι Χρήσης</a></li>
-              <li><a href="policies.html">Πολιτική Απορρήτου </a></li>
+              <li><a href="terms-en.html">Terms of Use</a></li>
+              <li><a href="policies-en.html">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -915,6 +814,8 @@
     </div>
   </footer>
   <!-- footer area end -->
+
+
 
 
   <!-- back to top area start -->

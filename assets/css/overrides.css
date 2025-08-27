@@ -5,6 +5,10 @@
   --nav-pill-h: 44px; /* ίδιο ύψος και για τα δύο κουμπιά */
 }
 
+body {
+  font-family: "Cairo", "Inter", sans-serif;
+}
+
 .navbar .nav-right-part-desktop {
   display: flex;
   align-items: center;
@@ -110,4 +114,35 @@
    ──────────────────────────────── */
 .section-title {
   padding-left: 0 !important;
+}
+/* ────────────────────────────────
+   Μόνο στην αραβική έκδοση
+   ──────────────────────────────── */
+
+html[lang="ar"] .banner-inner {
+  text-align: right; /* γενική στοίχιση */
+  padding-right: 1rem; /* λίγο «αέρα» από την εικόνα */
+}
+
+/* Αντιμετώπιση των bootstrap utilities που ίσως σε γυρίζουν αριστερά */
+html[lang="ar"] .text-lg-start {
+  text-align: right !important;
+}
+
+/* Προαιρετικό: ελάχιστη απόσταση του κειμένου από το block της εικόνας */
+html[lang="ar"] .banner-mask-bg-wrap {
+  margin-left: 24px;
+}
+
+/* Σιγουρεύουμε ότι οι επιμέρους γραμμές κληρονομούν τη στοίχιση */
+html[lang="ar"] .banner-inner .title,
+html[lang="ar"] .banner-inner .content,
+html[lang="ar"] .banner-inner .leo-experience {
+  text-align: inherit;
+}
+html[lang="ar"] .card p {
+  line-height: 1.8;
+}
+html[lang="ar"] .card-title {
+  line-height: 1.6;
 }
