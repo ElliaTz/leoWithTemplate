@@ -1,14 +1,19 @@
-/* ────────────────────────────────
-   NAV Right: START + Language
-   ──────────────────────────────── */
+/* ─────────────────────────────────────────────────────────
+   Ρυθμίσεις / Μεταβλητές
+   ───────────────────────────────────────────────────────── */
 :root {
-  --nav-pill-h: 44px; /* ίδιο ύψος και για τα δύο κουμπιά */
+  --nav-pill-h: 44px;
+  --quote-size: 100px;
 }
 
+/* γενικά */
 body {
   font-family: "Cairo", "Inter", sans-serif;
 }
 
+/* ─────────────────────────────────────────────────────────
+   NAV Right: START + Language
+   ───────────────────────────────────────────────────────── */
 .navbar .nav-right-part-desktop {
   display: flex;
   align-items: center;
@@ -35,8 +40,8 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* απόσταση globe – GR */
-  padding: 0 14px !important; /* οριζόντιο padding */
+  gap: 8px;
+  padding: 0 14px !important;
   background: #fff !important;
   border: 1px solid #e6e6e6 !important;
   color: #151423 !important;
@@ -68,7 +73,6 @@ body {
   background: #fff7f0 !important;
 }
 
-/* caret διακριτικό */
 .navbar .dropdown-toggle::after {
   margin-left: 6px;
   vertical-align: middle;
@@ -84,9 +88,7 @@ body {
   min-width: 10rem;
 }
 
-/* ────────────────────────────────
-   Responsive
-   ──────────────────────────────── */
+/* ───────────────── Responsive (nav) ───────────────── */
 @media (max-width: 991.98px) {
   .navbar .nav-right-part-desktop {
     gap: 10px;
@@ -101,7 +103,6 @@ body {
     font-size: 13px;
   }
 }
-
 @media (max-width: 575.98px) {
   .navbar .logo img {
     max-height: 28px;
@@ -109,32 +110,139 @@ body {
   }
 }
 
-/* ────────────────────────────────
+/* Desktop navbar: άσπρο φόντο σε όλο το πλάτος της .nav-container */
+@media (min-width: 992px) {
+  .navbar .nav-container.navbar-bg {
+    position: relative;
+  }
+  .navbar .nav-container.navbar-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    block-size: 100%;
+    background: #fff;
+    z-index: 0;
+  }
+  .navbar .nav-container.navbar-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+  .navbar .nav-right-part {
+    margin-inline-end: 60px;
+  }
+}
+
+/* ------- Navbar responsive (AR) ------- */
+@media (max-width: 991.98px) {
+  .navbar .nav-container {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .responsive-mobile-menu,
+  .navbar .nav-right-part {
+    flex: 0 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .responsive-mobile-menu .toggle-btn {
+    position: static;
+  }
+  .navbar .logo {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar .logo-subtitle {
+    display: none;
+  }
+
+  /* LTR: burger αριστερά, logo, actions δεξιά */
+  html[dir="ltr"] .navbar .responsive-mobile-menu {
+    order: 1;
+  }
+  html[dir="ltr"] .navbar .logo {
+    order: 2;
+  }
+  html[dir="ltr"] .navbar .nav-right-part {
+    order: 3;
+  }
+
+  /* RTL: actions αριστερά, logo, burger δεξιά */
+  html[dir="rtl"] .navbar .nav-right-part {
+    order: 1;
+  }
+  html[dir="rtl"] .navbar .logo {
+    order: 2;
+  }
+  html[dir="rtl"] .navbar .responsive-mobile-menu {
+    order: 3;
+  }
+
+  /* Dropdown ευθυγράμμιση σε RTL */
+  html[dir="rtl"] .dropdown-menu-end {
+    right: auto;
+    left: 0;
+  }
+
+  /* Mobile κύριο μενού */
+  html[dir="rtl"] #Iitechie_main_menu .navbar-nav.menu-open > li > a {
+    display: block;
+    text-align: right;
+  }
+  #Iitechie_main_menu .navbar-nav.menu-open > li > a {
+    border: 0 !important;
+  }
+  #Iitechie_main_menu .navbar-nav.menu-open > li > a::before,
+  #Iitechie_main_menu .navbar-nav.menu-open > li > a::after {
+    content: none !important;
+  }
+  #Iitechie_main_menu .navbar-nav.menu-open > li {
+    border: 0;
+  }
+  #Iitechie_main_menu .navbar-nav.menu-open > li + li {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
    Section Titles 
-   ──────────────────────────────── */
+   ───────────────────────────────────────────────────────── */
 .section-title {
   padding-left: 0 !important;
 }
-/* ────────────────────────────────
-   Μόνο στην αραβική έκδοση
-   ──────────────────────────────── */
 
-html[lang="ar"] .banner-inner {
-  text-align: right; /* γενική στοίχιση */
-  padding-right: 1rem; /* λίγο «αέρα» από την εικόνα */
+/* ─────────────────────────────────────────────────────────
+   Γλώσσες & γραμματοσειρές
+   ───────────────────────────────────────────────────────── */
+html[lang="ar"],
+:lang(ar) {
+  font-family: "Cairo", "Noto Sans Arabic", system-ui, sans-serif;
+}
+:lang(en) {
+  font-family: "Inter", system-ui, sans-serif;
+}
+/* Μόνο ροή LTR – χωρίς αλλαγή γραμματοσειράς */
+html[lang="ar"] [dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: inherit !important;
+  line-height: inherit;
 }
 
-/* Αντιμετώπιση των bootstrap utilities που ίσως σε γυρίζουν αριστερά */
+/* ─────────────────────────────────────────────────────────
+   Μόνο στην αραβική έκδοση 
+   ───────────────────────────────────────────────────────── */
+html[lang="ar"] .banner-inner {
+  text-align: right;
+  padding-right: 1rem;
+}
 html[lang="ar"] .text-lg-start {
   text-align: right !important;
 }
-
-/* Προαιρετικό: ελάχιστη απόσταση του κειμένου από το block της εικόνας */
 html[lang="ar"] .banner-mask-bg-wrap {
   margin-left: 24px;
 }
-
-/* Σιγουρεύουμε ότι οι επιμέρους γραμμές κληρονομούν τη στοίχιση */
 html[lang="ar"] .banner-inner .title,
 html[lang="ar"] .banner-inner .content,
 html[lang="ar"] .banner-inner .leo-experience {
@@ -145,4 +253,389 @@ html[lang="ar"] .card p {
 }
 html[lang="ar"] .card-title {
   line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Accordion (RTL)
+   ───────────────────────────────────────────────────────── */
+html[dir="rtl"] .accordion-button {
+  direction: rtl;
+  text-align: right;
+  position: relative;
+  padding-inline-end: 2rem;
+}
+html[dir="rtl"] .accordion-button::after {
+  position: absolute;
+  inset-inline-end: 0.75rem;
+  inset-inline-start: auto;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Why Choose 
+   ───────────────────────────────────────────────────────── */
+.why-choose .title-offset {
+  max-width: 720px;
+}
+
+.why-choose .hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0 120px 120px 0;
+}
+
+.why-choose .single-choose-inner .icon {
+  width: 72px;
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.why-choose .single-choose-inner .icon img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Why Choose – RTL fixes (mirroring)
+   ───────────────────────────────────────────────────────── */
+html[dir="rtl"] .why-choose .section-title,
+.why-choose[dir="rtl"] .section-title,
+html[dir="rtl"] .why-choose .media-body,
+.why-choose[dir="rtl"] .media-body {
+  text-align: right;
+}
+
+html[dir="rtl"] .why-choose .single-choose-inner,
+.why-choose[dir="rtl"] .single-choose-inner {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* ακύρωση default float/margins */
+html[dir="rtl"] .why-choose .single-choose-inner .media-left,
+.why-choose[dir="rtl"] .single-choose-inner .media-left,
+html[dir="rtl"] .why-choose .single-choose-inner .icon,
+.why-choose[dir="rtl"] .single-choose-inner .icon {
+  float: none !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* explicit order */
+html[dir="rtl"] .why-choose .single-choose-inner .media-body,
+.why-choose[dir="rtl"] .single-choose-inner .media-body {
+  order: 1 !important;
+}
+html[dir="rtl"] .why-choose .single-choose-inner .media-left,
+.why-choose[dir="rtl"] .single-choose-inner .media-left {
+  order: 2 !important;
+}
+
+/* Καμπύλη εικόνας hero, mirrored στο RTL */
+html[dir="rtl"] .why-choose .hero-img,
+.why-choose[dir="rtl"] .hero-img {
+  border-radius: 120px 0 0 120px;
+}
+
+/* Shape flip */
+.why-choose[dir="rtl"] .single-choose-inner .icon {
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+.why-choose[dir="rtl"] .single-choose-inner .icon img {
+  transform: none;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Footer – Bullets & Subscribe (RTL)
+   ───────────────────────────────────────────────────────── */
+
+/* ───────── bullets in footer ───────── */ /* RTL: bullets ΔΕΞΙΑ για ΟΛΑ τα widget_nav_menu (Contact + Links) */
+html[dir="rtl"] .footer-area .widget_nav_menu ul li {
+  padding-left: 0 !important;
+  padding-right: 18px !important;
+}
+html[dir="rtl"] .footer-area .widget_nav_menu ul li::before {
+  left: auto !important;
+  right: 0 !important;
+}
+html[dir="rtl"] .footer-area .widget_nav_menu ul li a {
+  text-align: right !important;
+}
+html[dir="rtl"] .footer-area .widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html[dir="rtl"] .footer-area .widget ul li {
+  position: relative;
+  padding-inline-start: 18px;
+}
+html[dir="rtl"] .footer-area .widget ul li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ff7a00;
+  border-radius: 50%;
+}
+html[dir="rtl"] .footer-area .widget ul li::after,
+html[dir="rtl"] .footer-area .widget ul li a::after {
+  content: none !important;
+  display: none !important;
+}
+.footer-area .widget.widget_subscribe ul,
+.footer-area .widget.widget_subscribe ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-area .widget.widget_subscribe ul li::before,
+.footer-area .widget.widget_subscribe ul li::after {
+  content: none !important;
+  display: none !important;
+}
+.footer-area .social-media li::before {
+  content: none !important;
+}
+.footer-area .social-media {
+  display: flex;
+  gap: 14px;
+} /* ------- Subscribe input (EN/AR mirror) ------- */
+.footer-area .widget_subscribe .single-input-inner {
+  position: relative;
+}
+.footer-area .widget_subscribe .single-input-inner input {
+  width: 100%;
+} /* LTR (αγγλικά) – βελάκι τέρμα δεξιά */
+html[dir="ltr"] .footer-area .widget_subscribe .single-input-inner button {
+  position: absolute !important;
+  right: 12px !important;
+  left: auto !important;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+html[dir="ltr"] .footer-area .widget_subscribe .single-input-inner input {
+  padding-right: 44px !important;
+  text-align: left !important;
+} /* RTL (αραβικά) – βελάκι τέρμα αριστερά */
+html[dir="rtl"] .footer-area .widget_subscribe .single-input-inner button {
+  position: absolute !important;
+  left: 12px !important;
+  right: auto !important;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+html[dir="rtl"] .footer-area .widget_subscribe .single-input-inner input {
+  padding-left: 44px !important; /* χώρος για το κουμπί */
+  text-align: right !important;
+}
+html[dir="rtl"]
+  .footer-area
+  .widget_subscribe
+  .single-input-inner
+  .fa-arrow-right {
+  transform: scaleX(-1);
+}
+html[dir="rtl"] .footer-area .widget_subscribe .single-input-inner input {
+  text-align: right !important;
+  padding-inline-end: 12px !important; /* δεξιά (RTL) */
+  padding-inline-start: 44px !important; /* αριστερά για το βελάκι */
+  width: 100%;
+  box-sizing: border-box;
+} /* Βελάκι τέρμα δεξιά */
+html[dir="rtl"] .single-input-inner {
+  position: relative;
+  padding: 0 !important;
+}
+html[dir="rtl"] .single-input-inner .subscribe-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+} /* Βελάκι τέρμα δεξιά */
+.single-input-inner {
+  position: relative;
+}
+html[dir="rtl"] .single-input-inner .subscribe-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+}
+html[dir="rtl"] .footer-area .widget_subscribe .single-input-inner input {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 52px !important;
+  padding-left: 12px !important;
+}
+html[dir="rtl"]
+  .footer-area
+  .widget_subscribe
+  .single-input-inner
+  input::placeholder {
+  direction: rtl;
+  text-align: right;
+}
+html[dir="rtl"] .footer-area .widget_subscribe .single-input-inner {
+  padding: 0 !important;
+} /* Mobile */
+@media (max-width: 576px) {
+  html[dir="rtl"] .footer-area .widget_nav_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li {
+    display: flex;
+    flex-direction: row-reverse; /* bullet στη δεξιά πλευρά (RTL) */
+    align-items: center;
+    gap: 10px; /* κενό μεταξύ bullet και κειμένου */
+    padding-block: 8px;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li::before {
+    content: ""; /* το πορτοκαλί bullet */
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff7a00;
+    flex: 0 0 6px;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li a {
+    flex: 1 1 auto;
+    text-align: right; /* κείμενο δεξιά */
+  }
+} /* Tablet fix: bullets + κείμενο να πηγαίνουν μαζί (RTL) */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  html[dir="rtl"] .footer-area .widget_nav_menu ul {
+    padding: 0;
+    list-style: none;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li::before {
+    content: "";
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff7a00;
+    flex: 0 0 8px;
+  }
+  html[dir="rtl"] .footer-area .widget_nav_menu ul li a {
+    flex: 1 1 auto;
+    text-align: right !important;
+  }
+} /* Terms / Policies (subscribe list) — RTL: δεξιά στοίχιση */
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul {
+  text-align: right !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li {
+  margin: 0;
+  padding: 0;
+}
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li a {
+  display: block;
+  text-align: right !important;
+}
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li::before,
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li::after,
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li a::before,
+html[dir="rtl"] .footer-area .widget.widget_subscribe ul li a::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Testimonial – Quote bubble (EN/GR/AR) 
+   ───────────────────────────────────────────────────────── */
+
+.testimonial-thumb .thumb,
+.testimonial-thumb-2 .thumb {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+:root {
+  --quote-size: 100px;
+}
+.testimonial-thumb .thumb .quote {
+  width: var(--quote-size);
+  height: var(--quote-size);
+  line-height: var(--quote-size);
+}
+
+/* Desktop / Tablet ≥ 992px */
+@media (min-width: 992px) {
+  [dir="rtl"] .testimonial-thumb .thumb > .quote-wrap,
+  [dir="rtl"] .testimonial-thumb-2 .thumb > .quote-wrap {
+    position: absolute !important;
+    top: 50% !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+  }
+
+  [dir="ltr"] .testimonial-thumb .thumb > .quote-wrap,
+  [dir="ltr"] .testimonial-thumb-2 .thumb > .quote-wrap {
+    position: absolute !important;
+    top: 50% !important;
+    bottom: auto !important;
+    right: 0 !important; /* εσωτερική άκρη */
+    left: auto !important;
+    transform: translate(50%, -50%) !important;
+    z-index: 10 !important;
+  }
+}
+
+/* Mobile ≤ 991.98px — κάτω-κέντρο */
+@media (max-width: 991.98px) {
+  .testimonial-thumb .thumb > .quote-wrap,
+  .testimonial-thumb-2 .thumb > .quote-wrap {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 0) !important;
+    z-index: 10 !important;
+  }
 }

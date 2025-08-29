@@ -9247,19 +9247,16 @@ ul {
   margin-bottom: 0 !important;
 }
 
-/* Κάνει όλες τις στήλες ίδιου ύψους */
 .pricing-area .row {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Οι στήλες τεντώνουν */
 .pricing-area .col-lg-4,
 .pricing-area .col-md-6 {
   display: flex;
 }
 
-/* Οι κάρτες γεμίζουν όλο το διαθέσιμο ύψος */
 .pricing-area .single-pricing-inner {
   flex: 1;
   display: flex;
@@ -9317,6 +9314,55 @@ ul {
   content: "+";
   margin-right: 2px;
 }
+
+.skill-area {
+  position: relative;
+  overflow: hidden;
+}
+
+/* default (LTR): εικόνα δεξιά, μισό πλάτος */
+.half-bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* RTL:  εικόνα αριστερά */
+html[dir="rtl"] .half-bg-right {
+  right: auto;
+  left: 0;
+}
+
+.progress-rate {
+  left: 0;
+}
+html[dir="rtl"] .progress-rate {
+  left: auto;
+  right: 0;
+}
+
+.progress-count-wrap {
+  right: 0;
+}
+html[dir="rtl"] .progress-count-wrap {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .progress-count-wrap {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.progress-count::before {
+  content: "+";
+  margin-inline-end: 2px;
+}
 /*τέλος αλλαγών για Στόχο*/
 
 /*αρχή αλλαγών για Γιατί τώρα*/
@@ -9334,56 +9380,46 @@ ul {
   height: 60px;
 }
 
-/* Μπλε background για όλο το section */
+/* ───────── Why-choose base ───────── */
 .why-choose {
-  background-color: #0a2342; /* σκούρο μπλε */
+  background: #0a2342;
   color: #fff;
 }
-
 .why-choose .section-title .title {
-  color: #ffffff; /* καθαρό λευκό */
+  color: #fff;
 }
-
-/* Υπότιτλος */
 .why-choose .section-title .sub-title {
   color: var(--main-color);
 }
-
-/* Κείμενο περιγραφής */
 .why-choose .section-title .content {
   color: #d0d6e0;
 }
 
-/* Bullets τίτλοι */
 .why-choose .single-choose-inner h4 {
   color: var(--main-color);
 }
-
-/* Bullets περιεχόμενο */
 .why-choose .single-choose-inner p {
-  color: #e6e6e6; /* πιο ανοιχτό γκρι */
+  color: #e6e6e6;
 }
 
-/* εικόνα δεξιά, μικρότερη και κολλημένη δεξιά */
 .img-cover {
   display: block;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin-left: auto;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
 }
 
-/* Μετακίνηση τίτλου δεξιά (ίδια ευθεία με bullets) ΜΟΝΟ σε desktop */
-@media (min-width: 992px) {
-  .why-choose .title-offset {
-    margin-left: 150px;
-  }
+.hero-img {
+  border-radius: 0 120px 120px 0;
+}
+html[dir="rtl"] .hero-img {
+  border-radius: 120px 0 0 120px;
 }
 
-@media (min-width: 992px) {
-  .why-choose .col-lg-6.ps-lg-5 {
-    padding-left: 0;
-  }
+.why-choose .title-offset {
+  margin: 0;
+  max-width: 720px;
 }
 /*τέλος αλλαγών για Γιατί τώρα*/
 
@@ -9440,7 +9476,6 @@ ul {
 }
 
 @media (max-width: 767.98px) {
-  /* bootstrap-friendly breakpoint */
   .faq-area.pd-top-60.pd-bottom-60 {
     padding-top: 30px !important;
     padding-bottom: 30px !important;
@@ -9469,7 +9504,7 @@ ul {
 /*τελος στατιστικα*/
 
 /*αρχη testimonial*/
-/* ΜΟΝΟ για αυτό το block μέσα στο slider */
+
 .slider.testimonial-thumb .item .thumb {
   background-size: cover;
   background-position: center;
@@ -9491,7 +9526,7 @@ ul {
     align-items: center;
     width: 100%;
     padding-top: 0;
-    padding-bottom: 0; /* μην σπρώχνει από theme paddings */
+    padding-bottom: 0;
   }
   .slider.testimonial-thumb .item .single-testimonial-inner .details {
     margin: 0;
@@ -9505,6 +9540,7 @@ ul {
     min-height: 420px;
   }
 }
+
 /* τελος testimonial*/
 
 /*αρχη contact*/

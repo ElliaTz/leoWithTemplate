@@ -536,7 +536,6 @@
     padding-bottom: 30px !important;
   }
 
-  /* Πρώην testimonial (gradient) + Counters */
   .testimonial-area {
     padding-top: 30px !important;
     padding-bottom: 30px !important;
@@ -592,7 +591,6 @@
     padding-bottom: 60px;
   }
 
-  /* Επαναφορά decorative εικόνων του FAQ σε absolute */
   .faq-area .faq-image-wrap {
     position: relative;
   }
@@ -609,7 +607,6 @@
     top: 50px;
   }
 
-  /* Πρώην testimonial (gradient) & counters στο desktop */
   .testimonial-area {
     padding-top: 60px;
     padding-bottom: 100px;
@@ -642,7 +639,7 @@
     margin-bottom: 0 !important;
   }
 
-  /* FAQ: πιο μικρό padding  */
+  /* FAQ:  */
   .faq-area.pd-top-60.pd-bottom-60 {
     padding-top: 40px !important;
     padding-bottom: 40px !important;
