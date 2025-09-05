@@ -96,7 +96,7 @@
             <span class="current-lang">AR</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-            
+
             <li><a class="dropdown-item" href="index.html">Ελληνικά (GR)</a></li>
             <li><a class="dropdown-item" href="index-en.html">English (EN)</a></li>
             <li><a class="dropdown-item" href="index-ar.html">العربية (AR)</a></li>
@@ -536,7 +536,7 @@
     <div class="counter-area">
       <div class="container">
         <div class="counter-area-2 text-center">
-          <h3 class="section-title section-title--underline"> إحصائيات</h3>
+          <h3 class="section-title section-title--underline"> إحصائيات تفاعل المشاركين في الفعاليات</h3>
           <div class="row">
             <div class="col-md-4">
               <div class="single-exp-inner style-4 text-center">
@@ -767,143 +767,252 @@
       </div>
 
       <!-- Contact form -->
-      <form class="contact-form-wrap" action="mail.php" method="post" id="contact-form">
+      <form class="contact-form-wrap" action="mail.php" method="post" id="contact-form-ar" dir="rtl">
         <div class="consulting-contact-form contact-form-card">
           <h3 class="mb-3"> هل لديك أي أسئلة؟</h3>
 
           <div class="btn-wrap pb-2">
-            <button type="submit" class="btn btn-base"> أرسل رسالة</button>
+            <a id="contactMailCtaAr" class="btn btn-base" href="mailto:info@conferience.com"
+              aria-label="راسلونا عبر البريد" title="راسلونا عبر البريد">أرسل رسالة</a>
           </div>
+
           <p class="form-messege mb-0 mt-20 text-center"></p>
         </div>
       </form>
-    </div>
-  </div>
-  <!-- Contact area end -->
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var a = document.getElementById('contactMailCtaAr'); // <-- σωστό ID
+          if (!a) return;
+
+          a.addEventListener('click', function () {
+            // Αφήνουμε το mailto να τρέξει. Αν δεν ανοίξει client, πάμε αυτόματα Gmail (χωρίς subject).
+            var cleaned = false;
+
+            function done() {
+              if (cleaned) return; cleaned = true;
+              window.removeEventListener('blur', onBlur, true);
+              document.removeEventListener('visibilitychange', onVis, true);
+              window.removeEventListener('pagehide', onHide, true);
+              clearTimeout(timer);
+            }
+            function onBlur() { done(); }                                
+            function onVis() { if (document.visibilityState === 'hidden') done(); }
+            function onHide() { done(); }
+
+            window.addEventListener('blur', onBlur, { capture: true, once: true });
+            document.addEventListener('visibilitychange', onVis, { capture: true });
+            window.addEventListener('pagehide', onHide, { capture: true, once: true });
+
+            var TIMEOUT_MS = 1800; 
+            var timer = setTimeout(function () {
+              if (cleaned) return; // άνοιξε client/handler → μην κάνεις fallback
+              var gmailUrl =
+                'https://mail.google.com/mail/?view=cm&fs=1' +
+                '&to=' + encodeURIComponent('info@conferience.com'); // ΧΩΡΙΣ subject
+              var win = window.open(gmailUrl, '_blank', 'noopener');
+              if (!win) window.location.href = gmailUrl;
+              done();
+            }, TIMEOUT_MS);
+          }, true); 
+        });
+      </script>
+
+      <!-- Contact area end -->
 
 
-  <!-- footer area start -->
-  <footer class="footer-area bg-black bg-cover" style="background-image: url('./assets/img/bg/2.webp')">
-    <div class="container">
-      <div class="row">
-        <!-- About -->
-        <div class="col-lg-3 col-md-6">
-          <div class="widget widget_about">
-            <h4 class="widget-title"> عن الشركة</h4>
-            <div class="details">
-              <p> Leo هو جزء من شركة Conferience Ltd.</p>
-              <p> العنوان</p>
-              <p>
-                12 شارع بيشوب، ليستر، LE1 6AF<br /> المملكة المتحدة
-              </p>
-              <ul class="social-media">
-                <li>
-                  <a class="facebook" href="#">
-                    <i class="fab fa-facebook-f"></i>
+      <!-- footer area start -->
+      <footer class="footer-area bg-black bg-cover" style="background-image: url('./assets/img/bg/2.webp')">
+        <div class="container">
+          <div class="row">
+            <!-- About -->
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget_about">
+                <h4 class="widget-title"> عن الشركة</h4>
+                <div class="details">
+                  <p> Leo هو جزء من شركة Conferience Ltd.</p>
+                  <p> العنوان</p>
+                  <p>
+                    12 شارع بيشوب، ليستر، LE1 6AF<br /> المملكة المتحدة
+                  </p>
+                  <ul class="social-media">
+                    <li>
+                      <a class="facebook" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="twitter" href="#">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="instagram" href="#">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget_nav_menu">
+                <h4 class="widget-title"> اتصل</h4>
+                <ul>
+                  <li><a href="#contact" dir="ltr">+30 695.1979547</a></li>
+                  <li><a href="#contact">info@conferience.com</a></li>
+                  <li>
+                    <a href="#contact"> 12 شارع بيشوب، ليستر، LE1 6AF المملكة المتحدة</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+            <!-- Links -->
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget_nav_menu">
+                <h4 class="widget-title"> روابط</h4>
+                <ul>
+                  <li><a href="#home"> الرئيسية</a></li>
+                  <li><a href="#about"> حول</a></li>
+                  <li><a href="#values"> القيم</a></li>
+                  <li><a href="#goal"> الهدف</a></li>
+                  <li><a href="#contact"> اتصل</a></li>
+                </ul>
+              </div>
+            </div>
+
+
+            <!-- Subscribe -->
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget_subscribe">
+                <h4 class="widget-title">
+                  هل تريد تلقي تحديثات منا؟
+                </h4>
+                <div class="single-input-inner style-border style-bg-none" dir="rtl">
+                  <a id="subscribeCtaAr" class="btn-arrow subscribe-cta"
+                    href="mailto:info@conferience.com?subject=keep%20me%20updated" aria-label="راسلونا عبر البريد"
+                    title="راسلونا عبر البريد">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <span>راسلونا عبر البريد</span>
                   </a>
-                </li>
-                <li>
-                  <a class="twitter" href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="instagram" href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-              </ul>
+                </div>
+                <style>
+                  :root {
+                    --accent: #ff8a00;
+                    --accent-hover: #ffb566;
+                  }
+
+                  .subscribe-cta {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: .5rem;
+                    color: var(--accent);
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: color .2s;
+                  }
+
+                  .subscribe-cta:hover,
+                  .subscribe-cta:focus-visible {
+                    color: var(--accent-hover);
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    outline: 2px solid transparent;
+                    outline-offset: 2px;
+                    border-radius: 6px;
+                  }
+                </style>
+
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    var SUBJECT = 'keep me updated'; // ίδιο και στις δύο γλώσσες
+                    function bindSilentFallback(anchorId) {
+                      var a = document.getElementById(anchorId);
+                      if (!a) return;
+                      a.addEventListener('click', function () {
+                        var cleaned = false;
+                        function done() {
+                          if (cleaned) return; cleaned = true;
+                          window.removeEventListener('blur', onBlur, true);
+                          document.removeEventListener('visibilitychange', onVis, true);
+                          window.removeEventListener('pagehide', onHide, true);
+                          clearTimeout(timer);
+                        }
+                        function onBlur() { done(); }
+                        function onVis() { if (document.visibilityState === 'hidden') done(); }
+                        function onHide() { done(); }
+
+                        window.addEventListener('blur', onBlur, { capture: true, once: true });
+                        document.addEventListener('visibilitychange', onVis, { capture: true });
+                        window.addEventListener('pagehide', onHide, { capture: true, once: true });
+
+                        var TIMEOUT_MS = 1800; // αύξησέ το (π.χ. 2200–2500) αν δεις διπλό άνοιγμα
+                        var timer = setTimeout(function () {
+                          if (cleaned) return;
+                          var gmailUrl =
+                            'https://mail.google.com/mail/?view=cm&fs=1' +
+                            '&to=' + encodeURIComponent('info@conferience.com') +
+                            '&su=' + encodeURIComponent(SUBJECT);
+                          var win = window.open(gmailUrl, '_blank', 'noopener');
+                          if (!win) window.location.href = gmailUrl;
+                          done();
+                        }, TIMEOUT_MS);
+                      }, true); // capture για να μη «κοπεί» από delegated listeners
+                    }
+
+                    bindSilentFallback('subscribeCtaEn');
+                    bindSilentFallback('subscribeCtaAr');
+                  });
+                </script>
+                <ul>
+                  <li><a href="terms-ar.html"> شروط الاستخدام</a></li>
+                  <li><a href="policies-ar.html"> سياسة الخصوصية</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Contact -->
-        <div class="col-lg-3 col-md-6">
-          <div class="widget widget_nav_menu">
-            <h4 class="widget-title"> اتصل</h4>
-            <ul>
-              <li><a href="#contact" dir="ltr">+30 695.1979547</a></li>
-              <li><a href="#contact">info@conferience.com</a></li>
-              <li>
-                <a href="#contact"> 12 شارع بيشوب، ليستر، LE1 6AF المملكة المتحدة</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        
-        <!-- Links -->
-        <div class="col-lg-3 col-md-6">
-          <div class="widget widget_nav_menu">
-            <h4 class="widget-title"> روابط</h4>
-            <ul>
-              <li><a href="#home"> الرئيسية</a></li>
-              <li><a href="#about"> حول</a></li>
-              <li><a href="#values"> القيم</a></li>
-              <li><a href="#goal"> الهدف</a></li>
-              <li><a href="#contact"> اتصل</a></li>
-            </ul>
-          </div>
-        </div>
-
-
-        <!-- Subscribe -->
-        <div class="col-lg-3 col-md-6">
-          <div class="widget widget_subscribe">
-            <h4 class="widget-title">
-              هل تريد تلقي تحديثات منا؟
-            </h4>
-            <div class="single-input-inner style-border style-bg-none">
-              <input type="email" placeholder="البريد الإلكتروني" />
-              <button class="subscribe-btn" aria-label="اشترك">
-                <i class="fa fa-arrow-left"></i>
-              </button>
+        <div class="footer-bottom text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 align-self-center">
+                <p>© 2025. All Rights Reserved</p>
+              </div>
             </div>
-            <ul>
-              <li><a href="terms-ar.html"> شروط الاستخدام</a></li>
-              <li><a href="policies-ar.html"> سياسة الخصوصية</a></li>
-            </ul>
           </div>
         </div>
+      </footer>
+      <!-- footer area end -->
+
+
+
+
+      <!-- back to top area start -->
+      <div class="back-to-top">
+        <span class="back-top"><i class="fa fa-angle-up"></i></span>
       </div>
-    </div>
-    <div class="footer-bottom text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 align-self-center">
-            <p>© 2025. All Rights Reserved</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- footer area end -->
+      <!-- back to top area end -->
 
+      <!-- all plugins here -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/fontawesome.min.js"></script>
+      <script src="assets/js/nice-select.min.js"></script>
+      <script src="assets/js/magnific.min.js"></script>
+      <script src="assets/js/isotope.min.js"></script>
+      <script src="assets/js/imageload.min.js"></script>
+      <script src="assets/js/owl.min.js"></script>
+      <script src="assets/js/slick.min.js"></script>
+      <script src="assets/js/tweenmax.min.js"></script>
+      <script src="assets/js/waypoint.js"></script>
+      <script src="assets/js/counterup.js"></script>
 
-
-
-  <!-- back to top area start -->
-  <div class="back-to-top">
-    <span class="back-top"><i class="fa fa-angle-up"></i></span>
-  </div>
-  <!-- back to top area end -->
-
-  <!-- all plugins here -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/fontawesome.min.js"></script>
-  <script src="assets/js/nice-select.min.js"></script>
-  <script src="assets/js/magnific.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/imageload.min.js"></script>
-  <script src="assets/js/owl.min.js"></script>
-  <script src="assets/js/slick.min.js"></script>
-  <script src="assets/js/tweenmax.min.js"></script>
-  <script src="assets/js/waypoint.js"></script>
-  <script src="assets/js/counterup.js"></script>
-
-  <!-- main js  -->
-  <script src="assets/js/main.js"></script>
+      <!-- main js  -->
+      <script src="assets/js/main.js"></script>
 
 </body>
 

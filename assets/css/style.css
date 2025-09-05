@@ -9115,6 +9115,12 @@ ul {
 
 /*******Changes********/
 /* αλλαγες στο template*/
+/*μην γίνεται συλλαβισμός πουθενά στη σελίδα*/
+* {
+  hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
 /* ────────────────────────────────
 /*  Logo */
 .logo {
@@ -9495,7 +9501,7 @@ html[dir="rtl"] .hero-img {
 .section-title--underline::after {
   content: "";
   display: block;
-  width: 60%;
+  width: 90%;
   height: 4px;
   background: var(--main-color);
   margin: 10px auto 0;
