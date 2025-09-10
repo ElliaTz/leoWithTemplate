@@ -83,8 +83,8 @@
       </div>
       <div class="nav-right-part nav-right-part-desktop align-self-center d-flex align-items-center">
         <!-- Κουμπί ΞΕΚΙΝΑ -->
-        <a class="btn btn-base"
-          href="mailto:info@conferience.com?subject=Ενδιαφέρον%20για%20LEO&body=Γεια%20σας%2C%0D%0A%0D%0AΘα%20ήθελα%20να%20μάθω%20περισσότερα%20για%20το%20LEO.%0D%0A%0D%0AΌνομα%3A%20%0D%0AΕταιρεία%3A%20%0D%0AΤηλέφωνο%3A%20%0D%0A%0D%0AΕυχαριστώ%21">
+        <a id="ctaStart" class="btn btn-base" class="btn btn-base" href="mailto:info@conferience.com"
+          data-subject="Ενδιαφέρομαι για το LEO">
           ΞΕΚΙΝΑ
         </a>
 
@@ -836,7 +836,7 @@
               window.removeEventListener('pagehide', onHide, true);
               clearTimeout(timer);
             }
-            function onBlur() { done(); } 
+            function onBlur() { done(); }
             function onVis() { if (document.visibilityState === 'hidden') done(); }
             function onHide() { done(); }
 
@@ -844,9 +844,9 @@
             document.addEventListener('visibilitychange', onVis, { capture: true });
             window.addEventListener('pagehide', onHide, { capture: true, once: true });
 
-            var TIMEOUT_MS = 1800; 
+            var TIMEOUT_MS = 1800;
             var timer = setTimeout(function () {
-              if (cleaned) return; 
+              if (cleaned) return;
               var gmailUrl =
                 'https://mail.google.com/mail/?view=cm&fs=1' +
                 '&to=' + encodeURIComponent('info@conferience.com'); // ΧΩΡΙΣ subject
@@ -854,7 +854,7 @@
               if (!win) window.location.href = gmailUrl;
               done();
             }, TIMEOUT_MS);
-          }, true); 
+          }, true);
         });
       </script>
 
@@ -1050,6 +1050,71 @@
 
   <!-- main js  -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+(function () {
+  var TO = 'info@conferience.com';
+  var BODY_LINES = [
+    'Τηλέφωνο επικοινωνίας:',
+    'Όνομα:',
+    'Θέμα:'
+  ];
+
+  function bindMailCta(id){
+    var a = document.getElementById(id);
+    if (!a) return;
+
+    // 1) Φτιάξε ΣΩΣΤΑ το mailto (subject από data-subject αν υπάρχει)
+    a.addEventListener('click', function () {
+      var subject = a.dataset.subject || 'θα ήθελα περισσότερες πληροφορίες';
+      var body = BODY_LINES.join('\n');
+
+      var mailtoUrl = 'mailto:' + TO +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body='    + encodeURIComponent(body);
+
+      a.setAttribute('href', mailtoUrl);
+    }, true); // capture για να μην «κοπεί» από listeners του theme
+
+    // 2) Σιωπηρό fallback σε Gmail μόνο αν δεν ανοίξει client/handler
+    a.addEventListener('click', function () {
+      var subject = a.dataset.subject || 'θα ήθελα περισσότερες πληροφορίες';
+      var body = BODY_LINES.join('\n');
+
+      var cleaned = false, timer;
+      function done(){ if (cleaned) return; cleaned = true;
+        window.removeEventListener('blur', onBlur, true);
+        document.removeEventListener('visibilitychange', onVis, true);
+        window.removeEventListener('pagehide', onHide, true);
+        if (timer) clearTimeout(timer);
+      }
+      function onBlur(){ done(); }                                   // άνοιξε native app
+      function onVis(){ if (document.visibilityState === 'hidden') done(); }
+      function onHide(){ done(); }
+
+      window.addEventListener('blur', onBlur, { capture:true, once:true });
+      document.addEventListener('visibilitychange', onVis, { capture:true });
+      window.addEventListener('pagehide', onHide, { capture:true, once:true });
+
+      var TIMEOUT_MS = 2000; // αύξησέ το σε 2500 αν δεις «διπλό» άνοιγμα
+      timer = setTimeout(function(){
+        if (cleaned) return;
+        var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1' +
+          '&to='   + encodeURIComponent(TO) +
+          '&su='   + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+        var win = window.open(gmailUrl, '_blank', 'noopener');
+        if (!win) window.location.href = gmailUrl;
+        done();
+      }, TIMEOUT_MS);
+    }, true);
+  }
+
+  // Δέσε το κουμπί σου (πρόσθεσε κι άλλα IDs αν έχεις κι άλλα CTA)
+  bindMailCta('ctaStart');
+})();
+</script>
+
 </body>
 
 </html>

@@ -83,10 +83,9 @@
       </div>
       <div class="nav-right-part nav-right-part-desktop align-self-center d-flex align-items-center">
         <!-- Κουμπί ΞΕΚΙΝΑ -->
-        <a class="btn btn-base"
-          href="mailto:info@conferience.com?subject=Interested%20in%20LEO&body=Hello%20Conferience%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20learn%20more%20about%20LEO.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0APhone%3A%20%0D%0A%0D%0AThanks%21">
-          ابدأ
-        </a>
+       <a id="ctaStartAr" class="btn btn-base" href="mailto:info@conferience.com" dir="rtl" aria-label="ابدأ">
+  ابدأ
+</a>
 
         <!-- Language Dropdown -->
         <div class="dropdown">
@@ -1014,6 +1013,53 @@
       <!-- main js  -->
       <script src="assets/js/main.js"></script>
 
+
+      <script>
+(function () {
+  var TO = 'info@conferience.com';
+  var SUBJECT = 'أود الحصول على مزيد من المعلومات';
+  var BODY = ['رقم الهاتف:', 'الاسم:', 'الموضوع:'].join('\n');
+
+  function bind(id){
+    var a = document.getElementById(id);
+    if (!a) return;
+
+    a.addEventListener('click', function () {
+      a.href = 'mailto:' + TO +
+               '?subject=' + encodeURIComponent(SUBJECT) +
+               '&body='    + encodeURIComponent(BODY);
+
+      var cleaned = false, timer;
+      function done(){ if (cleaned) return; cleaned = true;
+        window.removeEventListener('blur', onBlur, true);
+        document.removeEventListener('visibilitychange', onVis, true);
+        window.removeEventListener('pagehide', onHide, true);
+        if (timer) clearTimeout(timer);
+      }
+      function onBlur(){ done(); }
+      function onVis(){ if (document.visibilityState === 'hidden') done(); }
+      function onHide(){ done(); }
+
+      window.addEventListener('blur', onBlur, {capture:true, once:true});
+      document.addEventListener('visibilitychange', onVis, {capture:true});
+      window.addEventListener('pagehide', onHide, {capture:true, once:true});
+
+      timer = setTimeout(function(){
+        if (cleaned) return;
+        var gmail = 'https://mail.google.com/mail/?view=cm&fs=1' +
+          '&to='   + encodeURIComponent(TO) +
+          '&su='   + encodeURIComponent(SUBJECT) +
+          '&body=' + encodeURIComponent(BODY);
+        var win = window.open(gmail, '_blank', 'noopener');
+        if (!win) window.location.href = gmail;
+        done();
+      }, 2000);
+    }, true);
+  }
+
+  bind('ctaStartAr');
+})();
+</script>
 </body>
 
 </html>
